@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --primary: #59663b;
+  --primary-dark: #3f4a29;
+  --primary-light: #778556;
+
+  --gold: #b49358;
+  --gold-light: #d5bd8b;
+
+  --cream: #f7f2e7;
+  --cream-light: #fcfaf5;
+
+  --white: #ffffff;
+
+  --text: #27301d;
+  --text-light: #6f7566;
+
+  --border: #e3dccd;
+
+  --shadow: 0 20px 60px rgba(48, 52, 37, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background: var(--cream-light);
+  color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+.container-custom {
+  width: min(1200px, calc(100% - 40px));
+  margin: auto;
+}
+
+@media (max-width: 640px) {
+  .container-custom {
+    width: min(100% - 28px, 1200px);
+  }
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.gold-line {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(180, 147, 88, 0.18),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #f7f2e7 0%, #eee8d9 100%);
+}
