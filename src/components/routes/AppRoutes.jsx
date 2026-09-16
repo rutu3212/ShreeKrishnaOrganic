@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // =========================================
 // CUSTOMER LAYOUT COMPONENTS
@@ -35,8 +32,11 @@ import AddProduct from "../pages/admin/AddProduct";
 import EditProduct from "../pages/admin/EditProduct";
 import Categories from "../pages/admin/Categories";
 
-// Admin management pages
-import Offers from "../pages/admin/offers";
+// =========================================
+// ADMIN MANAGEMENT PAGES
+// =========================================
+
+import Offers from "../pages/admin/Offers";
 import HeroManagement from "../pages/admin/HeroManagement";
 import ImageManagement from "../pages/admin/ImageManagement";
 
@@ -53,52 +53,29 @@ import AdminRoute from "./AdminRoutes";
 function CustomerLayout() {
   return (
     <>
-      {/* Announcement Bar */}
       <AnnouncementBar />
 
-      {/* Navbar */}
       <Navbar />
 
-      {/* Customer Pages */}
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/shop"
-          element={<Shop />}
-        />
+        <Route path="/shop" element={<Shop />} />
 
         <Route
           path="/product/:id"
           element={<ProductDetails />}
         />
 
-        <Route
-          path="/cart"
-          element={<Cart />}
-        />
+        <Route path="/cart" element={<Cart />} />
 
-        <Route
-          path="/about"
-          element={<About />}
-        />
+        <Route path="/about" element={<About />} />
 
-        <Route
-          path="/contact"
-          element={<Contact />}
-        />
+        <Route path="/contact" element={<Contact />} />
 
-        {/* Customer 404 */}
-        <Route
-          path="*"
-          element={<NotFound />}
-        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
-      {/* Footer */}
       <Footer />
     </>
   );
@@ -108,10 +85,9 @@ function CustomerLayout() {
 // MAIN APP ROUTES
 // =========================================
 
-export default function AppRoutes() {
+function AppRoutes() {
   return (
     <Routes>
-
       {/* =====================================
           ADMIN LOGIN
       ===================================== */}
@@ -121,63 +97,51 @@ export default function AppRoutes() {
         element={<AdminLogin />}
       />
 
-
       {/* =====================================
           PROTECTED ADMIN ROUTES
       ===================================== */}
 
       <Route element={<AdminRoute />}>
-
-        {/* Dashboard */}
         <Route
           path="/admin/dashboard"
           element={<Dashboard />}
         />
 
-        {/* Products */}
         <Route
           path="/admin/products"
           element={<Products />}
         />
 
-        {/* Add Product */}
         <Route
           path="/admin/products/add"
           element={<AddProduct />}
         />
 
-        {/* Edit Product */}
         <Route
           path="/admin/products/edit/:id"
           element={<EditProduct />}
         />
 
-        {/* Categories */}
         <Route
           path="/admin/categories"
           element={<Categories />}
         />
 
-        {/* Offers */}
         <Route
           path="/admin/offers"
           element={<Offers />}
         />
 
-        {/* Homepage Hero Management */}
         <Route
           path="/admin/hero"
           element={<HeroManagement />}
         />
 
-        {/* Image Management */}
         <Route
           path="/admin/images"
           element={<ImageManagement />}
         />
-
       </Route>
-
 
       {/* =====================================
           CUSTOMER WEBSITE
@@ -187,9 +151,8 @@ export default function AppRoutes() {
         path="/*"
         element={<CustomerLayout />}
       />
-
     </Routes>
   );
 }
 
-
+export default AppRoutes;
